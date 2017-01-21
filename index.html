@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
-<body>
 
-<p>Click the button to get your coordinates.</p>
+    <head>
 
-<button onclick="getLocation()">Try It</button>
 
-<p id="demo"></p>
+    </head>
+    <body>
 
-<script>
-var x = document.getElementById("demo");
+    <p>Click the button to get your coordinates.</p>
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
+    <button onclick="getLocation()">Try It</button>
 
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
+    <p id="demo"></p>
 
-</body>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script src="main.js"></script>
+
+
+    </body>
 </html>
