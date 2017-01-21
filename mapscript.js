@@ -12,10 +12,7 @@ require([
     map: map,                 // Reference to the map object created before the scene
     scale: 50000000,          // Sets the initial scale to 1:50,000,000
     center: [34.41, 119.84]  // Sets the center point of view with lon/lat
-  
-
-});
-  
+  });
    function initFunc(map ) {
           if( navigator.geolocation ) {  
             navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
@@ -49,7 +46,7 @@ require([
           }
         }
 
-        
+
         function zoomToLocation(location) {
           var pt = new Point(location.coords.longitude, location.coords.latitude);
           addGraphic(pt);
@@ -66,22 +63,19 @@ require([
           }
           map.centerAt(pt);
         }
-        
+       
         function addGraphic(pt){
           var symbol = new SimpleMarkerSymbol(
-            SimpleMarkerSymbol.STYLE_CIRCLE, 
-            12, 
+            SimpleMarkerSymbol.STYLE_CIRCLE,
+            12,
             new SimpleLineSymbol(
               SimpleLineSymbol.STYLE_SOLID,
-              new Color([210, 105, 30, 0.5]), 
+              new Color([210, 105, 30, 0.5]),
               8
-            ), 
+            ),
             new Color([210, 105, 30, 0.9])
           );
           graphic = new Graphic(pt, symbol);
           map.graphics.add(graphic);
         }
-      
-  
-
 });
