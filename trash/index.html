@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no" />
+        <title>GeoMusic</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+
+        <p>Click the button to get your coordinates.</p>
+
+        <button onclick="getLocation()">Try It</button>
+
+        <p id="demo"></p>
+
+        <div class = "listening-to">
+            <h5></h5>
+        </div>
+
+        <div id = "button">
+            <p>Test</p>
+        </div>
+
+        <div id = "overlay" class = "disabled">
+            <div id = "slide" class = "disabled">
+                <div id = "cancel-area">
+                    <img src = "exit.png"></img>
+                </div>
+                <div id = "information">
+                    <h1>Song Title</h1>
+                    <h2>Song Artist</h2>
+                    <p>
+                        Description of song
+                    </p>
+                    <div class="showSong"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+        <script src="main.js"></script>
+
+
+    </body>
+</html>

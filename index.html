@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no" />
-        <title>GeoMusic</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Get started with graphics - 4.2</title>
 
-    </head>
-    <body>
-
-        <p>Click the button to get your coordinates.</p>
-
-        <button onclick="getLocation()">Try It</button>
-
-        <p id="demo"></p>
-
-        <div class = "listening-to">
-            <h5></h5>
-        </div>
-
-        <div id = "button">
-            <p>Test</p>
-        </div>
-
-        <div id = "overlay" class = "disabled">
-            <div id = "slide" class = "disabled">
-                <div id = "cancel-area">
-                    <img src = "exit.png"></img>
-                </div>
-                <div id = "information">
-                    <h1>Song Title</h1>
-                    <h2>Song Artist</h2>
-                    <p>
-                        Description of song
-                    </p>
-                    <div class="showSong"></div>
-                </div>
-            </div>
-        </div>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.2/"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 
 
-        <script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
-        <script src="main.js"></script>
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #btn {
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 20px;
+      height: 50px;
+      text-align: center;
+      margin-left: 5vw;
+      padding: 10px;
+      width: 90vw;
+      background: #FFAF2D;
+      box-shadow: 0 5px 0 0 #BE8324;
+      border-radius: 13px;
+      transition: 0.05s;
+      cursor: pointer;
+      cursor: hand;
+    }
+    #btn:active {
+      box-shadow: none;
+      transform: translateY(5px);
+    }
+  </style>
 
+  <script src="script.js">
 
-    </body>
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+  <div id="btn"><img src = "/white-pin.png"/></div>
+</body>
+
 </html>
