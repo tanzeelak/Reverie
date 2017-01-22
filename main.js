@@ -12,7 +12,7 @@ function showPosition(position) {
     "<br>Longitude: " + position.coords.longitude;
 }
 
-var songTitle, artist, songTitle2, artist2, id, songhtml;
+var songTitle, artist, songTitle2, artist2, id, songhtml, embedHtml;
 
 $(document).ready(function() {
     $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=tanzeelak&api_key=8fa0affd07885c7c5d5df7bf1f61a288&limit=2&format=json&callback=?", function(data) {
@@ -46,9 +46,10 @@ $(document).ready(function() {
 
             var iframeSrc = "https://embed.spotify.com/?uri=spotify:track:" + id
             console.log(iframeSrc);
-            var embedHtml = '<iframe src="' + iframeSrc + '" frameborder="0" allowtransparency="true"></iframe>';
+            embedHtml = '<iframe src="' + iframeSrc + '" frameborder="0" allowtransparency="true"></iframe>';
             console.log(embedHtml);
             $('.showSong').append(embedHtml);
+
 
         });
     });
