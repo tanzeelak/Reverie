@@ -39,7 +39,7 @@ require([
             }
         });
 
-        $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=tanzeelak&api_key=8fa0affd07885c7c5d5df7bf1f61a288&limit=2&format=json&callback=?", function(data) {
+        $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=tanzeelak&api_key=8fa0affd07885c7c5d5df7bf1f61a288&limit=2&format=json&callback=?", function(data) {
             var songTitle, artist, songTitle2, artist2, id, songhtml, embedHtml;
             var html = ''; // we declare the variable that we'll be using to store our information
             var counter = 1; // we declare a counter variable to use with the if statement in order to limit the result to 1
