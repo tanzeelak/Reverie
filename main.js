@@ -53,4 +53,17 @@ $(document).ready(function() {
         });
     });
 
+    $("#button").click(function() {
+        $("#slide").addClass("enabled");
+        $("#slide").removeClass("disabled");
+        $("#overlay").addClass("enabled");
+        $("#overlay").removeClass("disabled");
+    });
+    $("#cancel-area").click(function() {
+        $("#slide").removeClass("enabled");
+        $("#slide").addClass("disabled");
+        $("#overlay").removeClass("enabled");
+        $("#overlay").addClass("disabled");
+    });
+
 }); // close document ready function

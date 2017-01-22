@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+  background-color: #eee;
+  margin: 0;
+}
+#button {
+  width: 100px;
+  height: 20px;
+  background-color: #ddd;
+  text-align: center;
+  z-index: 1;
+  cursor: pointer;
+  cursor: hand;
+}
+
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+}
+#slide {
+  position: fixed;
+  transition: 0.5s;
+}
+#cancel-area {
+  height: 100px;
+  width: 100vw;
+  text-align: center;
+  padding-top: 30px;
+}
+#information {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  border-radius: 15px 15px 0 0;
+}
+#overlay.disabled{
+  background-color: rgba(0,0,0,0);
+  pointer-events: none;
+}
+#overlay.enabled{
+  background-color: rgba(0,0,0,0.5);
+  pointer-events: all;
+}
+#slide.disabled {top: 100vh;}
+#slide.enabled {top: 0;}
