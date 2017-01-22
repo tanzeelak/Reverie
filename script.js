@@ -32,7 +32,7 @@ require([
         });
         // Create a symbol for drawing the point
         var markerSymbol = new SimpleMarkerSymbol({
-            color: [226, 119, 40],
+            color: [255, 175, 45],
             outline: { // autocasts as new SimpleLineSymbol()
                 color: [255, 255, 255],
                 width: 2
