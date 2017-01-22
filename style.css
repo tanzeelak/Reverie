@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box;
+}
 body {
   overflow: hidden;
   background-color: #eee;
+  margin: 0;
 }
 #button {
   width: 100px;
@@ -16,22 +20,33 @@ body {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  top: 0;
+  transition: 0.5s;
+}
+#slide {
+  position: fixed;
   transition: 0.5s;
 }
 #cancel-area {
-  background-color: rgba(0,0,0,0.5);
-  height:40px;
+  height: 100px;
   width: 100vw;
+  text-align: center;
+  padding-top: 30px;
 }
 #information {
   background-color: white;
   width: 100vw;
   height: 100vh;
   padding: 20px;
+  border-radius: 15px 15px 0 0;
 }
-.disabled {
-  top: 100vh;
+#overlay.disabled{
+  background-color: rgba(0,0,0,0);
+  pointer-events: none;
 }
-.enabled {
-  top: 0;
+#overlay.enabled{
+  background-color: rgba(0,0,0,0.5);
+  pointer-events: all;
 }
+#slide.disabled {top: 100vh;}
+#slide.enabled {top: 0;}
