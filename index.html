@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Get started with graphics - 4.2</title>
+  <title>Reverie</title>
 
   <link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -112,6 +112,45 @@
     #slide.disabled {top: 100vh;}
     #slide.enabled {top: 0;}
 
+    #landing {
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(255,175,45,0.5);
+      z-index: 1;
+      padding-top: 30vh;
+      text-align: center;
+      font-family: 'Montserrat';
+      color: white;
+      transition: 0.3s;
+    }
+    #landing h1 {
+      font-size: 10vw;
+      letter-spacing: 30px;
+      margin: 0;
+    }
+    #landing h2 {
+      font-size: 3vw;
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
+    #landing div {
+      margin: 0 auto;
+      background-color: transparent;
+      border: 2px solid white;
+      height: 50px;
+      width: 100px;
+    }
+    #landing div:hover {
+      background-color: white;
+      color: #FFAF2D;
+      cursor: pointer;
+      cursor: hand;
+    }
+    .inactive {
+      pointer-events: none;
+      opacity: 0;
+    }
   </style>
 
   <script src="script.js">
@@ -120,6 +159,14 @@
 </head>
 
 <body>
+  <div id = "landing" class = "">
+    <h1>REVERIE</h1>
+    <h2>capture moments through music</h2>
+    <div id = "landingButton">
+      <p>ENTER</p>
+    </div>
+  </div>
+
   <div id="viewDiv"></div>
   <div id="btn"><img src = "white-pin.png"/></div>
 

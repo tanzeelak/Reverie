@@ -124,7 +124,11 @@ require([
         $("#slide").removeClass("disabled");
         $("#overlay").addClass("enabled");
         $("#overlay").removeClass("disabled");
-    })
+    });
+
+    $("#landingButton").click(function() {
+        $("#landing").addClass("inactive");
+    });
 
     window.onload = function() {
         document.getElementById("descriptionButton").addEventListener("click", getLocation, false);
