@@ -42,8 +42,6 @@ $(document).ready(function() {
             $.each(data.tracks.items, function(i, item){
                 id = item.id;
                 console.log(id);
-                // console.log(songTitle);
-                // console.log(artist);
             });
 
             var iframeSrc = "https://embed.spotify.com/?uri=spotify:track:" + id
@@ -53,13 +51,6 @@ $(document).ready(function() {
             $('.showSong').append(embedHtml);
 
         });
-
-        // var iframeSrc = "https://embed.spotify.com/?uri=spotify:track:" + id
-        // console.log(iframeSrc);
-        // <iframe src="https://embed.spotify.com/?uri=spotify:track:5JunxkcjfCYcY7xJ29tLai" frameborder="0" allowtransparency="true"></iframe>
-
-
-
     });
 
 }); // close document ready function
