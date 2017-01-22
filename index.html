@@ -6,6 +6,7 @@
   <title>Get started with graphics - 4.2</title>
 
   <link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://js.arcgis.com/4.2/"></script>
   <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -42,6 +43,74 @@
       box-shadow: none;
       transform: translateY(5px);
     }
+
+    .songArtist,.songTitle {
+      margin: 0px;
+    }
+    #descriptionEntry {
+      box-sizing: border-box;
+      border: 0px;
+      background-color: white;
+      width: 80vw;
+      height: 100px;
+      padding: 10px;
+      border-radius: 15px;
+    }
+    #descriptionButton {
+      margin-left: 20vw;
+      width: 40vw;
+      height: 30px;
+      border-radius:5px;
+      margin: 0 auto;
+      text-align: center;
+      color: #333;
+      background-color: white;
+      box-shadow: 0 5px 0 0 #eee;
+      transition: 0.1s;
+    }
+    #descriptionButton:active {
+      box-shadow: none;
+      transform: translateY(5px);
+    }
+    #descriptionButton p {
+      padding-top: 7px;
+    }
+    #overlay {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      transition: 0.5s;
+    }
+    #slide {
+      position: fixed;
+      transition: 0.5s;
+    }
+    #cancel-area {
+      height: 100px;
+      width: 100vw;
+    }
+    #information {
+      background-color: #FFAF2D;
+      width: 100vw;
+      height: 100vh;
+      padding: 40px;
+      border-radius: 15px 15px 0 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', Helvetica;
+      color: white;
+    }
+    #overlay.disabled{
+      background-color: rgba(0,0,0,0);
+      pointer-events: none;
+    }
+    #overlay.enabled{
+      background-color: rgba(0,0,0,0.5);
+      pointer-events: all;
+    }
+    #slide.disabled {top: 100vh;}
+    #slide.enabled {top: 0;}
+
   </style>
 
   <script src="script.js">
@@ -52,6 +121,24 @@
 <body>
   <div id="viewDiv"></div>
   <div id="btn"><img src = "white-pin.png"/></div>
+
+  <div id = "overlay" class = "disabled">
+      <div id = "slide" class = "disabled">
+          <div id = "cancel-area"></div>
+          <div id = "information">
+              <h1 class = "songTitle">Loading...</h1>
+              <h2 class = "songArtist">Loading...</h2>
+              <form>
+                <h3>What are your thoughts about this song?</h3>
+                <textarea type = "text" id = "descriptionEntry" name = "description"/></textarea>
+                <br />
+                <br />
+                <div type = "button" id = "descriptionButton"><p>Submit</p></div>
+              </form>
+          </div>
+      </div>
+  </div>
+
 </body>
 
 </html>

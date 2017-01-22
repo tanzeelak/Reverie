@@ -54,6 +54,10 @@ require([
                 counter++ // add 1 to the counter variable each time the each loop runs
             }); // close each loop
             $('.listening-to h5').append(html); // print the information to the document - here I look for the h5 tag inside the div with a class of 'listening-to' and use the jQuery append method to insert the information we've stored in the html variable inside the h5 tag.
+            $('.songTitle').empty();
+            $('.songArtist').empty();
+            $('.songTitle').append(songTitle);
+            $('.songArtist').append(artist);
 
             songTitle2 = songTitle.split(' ').join('%20');
             artist2 =  artist.split(' ').join('%20');
@@ -95,14 +99,27 @@ require([
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(newPin);
+            $("#slide").addClass("enabled");
+            $("#slide").removeClass("disabled");
+            $("#overlay").addClass("enabled");
+            $("#overlay").removeClass("disabled");
         } else {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
+
+    $("#descriptionButton").click(function () {
+        $("#slide").removeClass("enabled");
+        $("#slide").addClass("disabled");
+        $("#overlay").removeClass("enabled");
+        $("#overlay").addClass("disabled");
+    });
+
     window.onload = function() {
         document.getElementById("btn").addEventListener("click", getLocation, false);
         console.log("I hate javascript");
     }
+
     /**********************
      * Create a point graphic
      **********************/
