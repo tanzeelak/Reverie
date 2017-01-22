@@ -24,7 +24,7 @@ require([
         zoom: 3
     });
 
-    function newPin(position) {
+    function newPin(position, note) {
         console.log('pin called!');
         var point = new Point({
             longitude: position.coords.longitude,
@@ -74,10 +74,10 @@ require([
 
                 var iframeSrc = "https://embed.spotify.com/?uri=spotify:track:" + id
                 console.log(iframeSrc);
-                embedHtml = '<iframe src="' + iframeSrc + '" frameborder="0" allowtransparency="true"></iframe>';
+                embedHtml = '<iframe src="' + iframeSrc + '" frameborder="0" allowtransparency="true"></iframe><p style="position:relative;top:-60px;font-size:18px">' + note + '</p>';
                 console.log(embedHtml);
                 $('.showSong').append(embedHtml);
-
+                console.log(note);
                 // Create a graphic and add the geometry and symbol to it
                 var pointGraphic = new Graphic({
                     geometry: point,
@@ -97,12 +97,16 @@ require([
     var x = document.getElementById("demo");
 
     function getLocation() {
+        console.log("did i run?")
+        var note = document.getElementById("descriptionEntry").value;
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(newPin);
-            $("#slide").addClass("enabled");
-            $("#slide").removeClass("disabled");
-            $("#overlay").addClass("enabled");
-            $("#overlay").removeClass("disabled");
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    newPin(position, note);
+                })
+
+
+
         } else {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
@@ -115,8 +119,15 @@ require([
         $("#overlay").addClass("disabled");
     });
 
+    $("#btn").click(function() {
+        $("#slide").addClass("enabled");
+        $("#slide").removeClass("disabled");
+        $("#overlay").addClass("enabled");
+        $("#overlay").removeClass("disabled");
+    })
+
     window.onload = function() {
-        document.getElementById("btn").addEventListener("click", getLocation, false);
+        document.getElementById("descriptionButton").addEventListener("click", getLocation, false);
         console.log("I hate javascript");
     }
 

@@ -41,6 +41,7 @@ $(document).ready(function() {
 
             $.each(data.tracks.items, function(i, item){
                 id = item.id;
+                albumCover = item.album.images[0]
                 console.log(id);
             });
 
